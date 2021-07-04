@@ -22,7 +22,7 @@
               placeholder="Senha"
             />
           </div>
-          <button class="btn btn-primary d-blox">Entrar</button>
+          <button class="btn btn-primary w-100">Entrar</button>
         </div>
       </div>
     </form>

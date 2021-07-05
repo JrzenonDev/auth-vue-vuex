@@ -15,5 +15,6 @@ export const ActionSetUser = ({ commit }, payload) => {
 
 export const ActionSetToken = ({ commit }, payload) => {
   storage.setHeaderToken(payload)
+  storage.setLocalToken(payload)
   commit(types.SET_TOKEN, payload)
 }

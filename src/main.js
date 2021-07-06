@@ -8,7 +8,7 @@ import './assets/scss/app.scss'
 Vue.config.productionTip = false
 
 window._Vue = new Vue({
-  router,
   store,
+  router,
   render: h => h(App)
 }).$mount('#app')

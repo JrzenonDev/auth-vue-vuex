@@ -17,7 +17,7 @@ export const ActionCheckToken = ({ dispatch, state }) => {
   const token = storage.getLocalToken()
 
   if (!token) {
-    return Promise.reject(new Error('Token inválido'))
+    return Promise.reject(new Error('Token Inválido'))
   }
 
   dispatch('ActionSetToken', token)
@@ -28,9 +28,7 @@ export const ActionLoadSession = ({ dispatch }) => {
   return new Promise((resolve, reject) => {
     try {
       const { data: { user } } = services.auth.loadSession()
-
       dispatch('ActionSetUser', user)
-
       resolve()
     } catch (err) {
       dispatch('ActionSignOut')
@@ -44,14 +42,14 @@ export const ActionSetUser = ({ commit }, payload) => {
 }
 
 export const ActionSetToken = ({ commit }, payload) => {
-  storage.setHeaderToken(payload)
   storage.setLocalToken(payload)
+  storage.setHeaderToken(payload)
   commit(types.SET_TOKEN, payload)
 }
 
 export const ActionSignOut = ({ dispatch }) => {
-  storage.setHeaderToeken('')
-  storage.deleteLocalToken('')
+  storage.setHeaderToken('')
+  storage.deleteLocalToken()
   dispatch('ActionSetUser', {})
   dispatch('ActionSetToken', '')
 }

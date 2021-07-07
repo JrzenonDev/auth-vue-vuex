@@ -6,10 +6,11 @@
     </div>
 
     <div class="home-links">
-      <a href="#" class="home-link">
+
+      <router-link class="home-link" :to="{ name: 'watchlist' }" >
         <i class="material-icons md-48">playlist_play</i>
         <span>Quero assistir</span>
-      </a>
+      </router-link>
       <a href="#" class="home-link">
         <i class="material-icons md-48">playlist_add_check</i>
         <span>Já assisti</span>
